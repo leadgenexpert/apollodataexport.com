@@ -1,0 +1,50 @@
+{
+  "total_tests": 7,
+  "passed_tests": 7,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "test": "API Root Endpoint",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 200, Response: {'message': 'Hello World'}"
+    },
+    {
+      "test": "Create Lead (Valid Data)",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 200, Lead ID: bbc3e40b-6665-49c5-8066-cf5ad4d2e81b"
+    },
+    {
+      "test": "Create Lead (Missing Name)",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 422 (expected 422 for missing name)"
+    },
+    {
+      "test": "Create Lead (Invalid Email)",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 422 (expected 422 for invalid email)"
+    },
+    {
+      "test": "Create Lead (Minimal Data)",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 200, Lead ID: 1ce82d39-8d76-40a4-a5c2-a7b57a4f5350"
+    },
+    {
+      "test": "Get All Leads",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 200, Total leads: 2"
+    },
+    {
+      "test": "CORS Headers Check",
+      "status": "\u2705 PASS",
+      "success": true,
+      "details": "Status: 204, CORS headers: ['access-control-allow-origin', 'access-control-allow-methods', 'access-control-allow-headers']"
+    }
+  ]
+}

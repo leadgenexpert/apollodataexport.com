@@ -25,7 +25,15 @@ import {
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 const WHATSAPP_NUMBER = "8801743212291";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+// WhatsApp message templates
+const getWhatsAppLink = (message = "") => {
+  const encodedMessage = encodeURIComponent(message);
+  return `https://wa.me/${WHATSAPP_NUMBER}${message ? `?text=${encodedMessage}` : ""}`;
+};
+
+const DEFAULT_MESSAGE = `Hi! I'm interested in your Apollo Scraping Service. I'd like to know more about getting B2B leads from Apollo.io.`;
+const WHATSAPP_LINK = getWhatsAppLink(DEFAULT_MESSAGE);
 
 const LandingPage = () => {
   const [formData, setFormData] = useState({
@@ -35,6 +43,8 @@ const LandingPage = () => {
     apollo_url: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showWhatsAppFollow, setShowWhatsAppFollow] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +62,8 @@ const LandingPage = () => {
     try {
       await axios.post(`${API}/leads`, formData);
       toast.success("Request submitted successfully! We'll contact you soon.");
+      setSubmittedData({ ...formData });
+      setShowWhatsAppFollow(true);
       setFormData({ name: "", email: "", phone: "", apollo_url: "" });
     } catch (error) {
       toast.error("Failed to submit request. Please try again.");
@@ -59,6 +71,21 @@ const LandingPage = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  // Generate personalized WhatsApp message
+  const getPersonalizedWhatsAppLink = () => {
+    if (!submittedData) return WHATSAPP_LINK;
+    const message = `Hi! I'm ${submittedData.name}.
+
+I just submitted a request for Apollo Scraping Service.
+
+📧 Email: ${submittedData.email}
+📱 Phone: ${submittedData.phone}
+${submittedData.apollo_url ? `🔗 Apollo URL: ${submittedData.apollo_url}` : ""}
+
+I'd like to discuss my lead requirements. Please get back to me!`;
+    return getWhatsAppLink(message);
   };
 
   const scrollToForm = () => {
@@ -106,6 +133,18 @@ const LandingPage = () => {
       popular: false,
     },
   ];
+
+  const getPricingWhatsAppLink = (plan) => {
+    const message = `Hi! I'm interested in the *${plan.name} Package* for Apollo Scraping.
+
+📦 Package: ${plan.name}
+💰 Price: ${plan.price}
+📊 Leads: ${plan.leads}
+⏱ Delivery: ${plan.delivery}
+
+Please share more details about how to proceed!`;
+    return getWhatsAppLink(message);
+  };
 
   const stats = [
     { icon: Users, value: "500+", label: "Happy Clients" },
@@ -318,8 +357,9 @@ const LandingPage = () => {
                         ? "bg-[#25D366] hover:bg-[#1faa52] text-white shadow-[0_0_20px_rgba(37,211,102,0.4)]"
                         : "bg-white/10 hover:bg-white/20 text-white"
                     }`}
-                    onClick={scrollToForm}
+                    onClick={() => window.open(getPricingWhatsAppLink(plan), "_blank")}
                   >
+                    <MessageCircle className="mr-2 h-5 w-5" />
                     Get Started
                   </Button>
                 </CardContent>
@@ -404,6 +444,23 @@ const LandingPage = () => {
                     )}
                   </Button>
                 </form>
+
+                {/* WhatsApp Follow-up after form submission */}
+                {showWhatsAppFollow && submittedData && (
+                  <div className="mt-6 p-4 bg-[#25D366]/10 border border-[#25D366]/30 rounded-xl animate-fade-in-up">
+                    <p className="text-[#25D366] text-center mb-3 font-medium">
+                      Want faster response? Chat with us on WhatsApp!
+                    </p>
+                    <Button
+                      data-testid="form-whatsapp-followup-btn"
+                      className="w-full bg-[#25D366] hover:bg-[#1faa52] text-white font-semibold py-4 rounded-xl transition-all"
+                      onClick={() => window.open(getPersonalizedWhatsAppLink(), "_blank")}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat on WhatsApp (Pre-filled with your info)
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>

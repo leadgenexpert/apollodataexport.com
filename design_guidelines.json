@@ -1,0 +1,132 @@
+{
+  "project_name": "Apollo Scraping Service",
+  "app_type": "landing_page",
+  "file_structure": {
+    "frontend_extension": "js",
+    "styles_path": "/app/frontend/src/index.css"
+  },
+  "theme": {
+    "mode": "dark",
+    "primary_color": "#0f172a",
+    "accent_color": "#25D366",
+    "secondary_color": "#1e293b",
+    "background_color": "#020617",
+    "font_family": {
+      "headings": "Outfit, sans-serif",
+      "body": "Inter, sans-serif"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font": "Outfit",
+      "weights": ["500", "700"],
+      "sizes": {
+        "h1": "text-5xl md:text-7xl tracking-tight leading-none",
+        "h2": "text-4xl md:text-5xl tracking-tight",
+        "h3": "text-2xl md:text-3xl font-semibold"
+      }
+    },
+    "body": {
+      "font": "Inter",
+      "weights": ["400", "500"],
+      "sizes": {
+        "base": "text-base md:text-lg leading-relaxed text-slate-400",
+        "small": "text-sm text-slate-500"
+      }
+    }
+  },
+  "ui_components": {
+    "buttons": {
+      "primary": "bg-[#25D366] hover:bg-[#1faa52] text-white font-medium px-8 py-3 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] active:scale-95",
+      "secondary": "bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-3 rounded-full backdrop-blur-md transition-all duration-300 active:scale-95",
+      "whatsapp": "bg-[#25D366] text-white flex items-center gap-2 hover:brightness-110 transition-all rounded-full px-6 py-3 font-semibold"
+    },
+    "cards": {
+      "base": "bg-slate-900/50 border border-slate-800 hover:border-slate-600 transition-all duration-300 rounded-2xl p-6 backdrop-blur-sm group",
+      "feature": "hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10",
+      "pricing_highlight": "bg-slate-900/80 border-[#25D366] border-2 relative overflow-hidden"
+    },
+    "inputs": {
+      "base": "bg-slate-950/50 border-slate-800 text-white placeholder:text-slate-600 focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-all rounded-lg h-12"
+    }
+  },
+  "sections": {
+    "hero": {
+      "layout": "Grid with large heading left, abstract data visual right",
+      "background_image": "https://images.unsplash.com/photo-1759178461885-43915042cd11?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "overlay": "bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950",
+      "elements": [
+        "Headline: 'Enterprise-Grade Lead Scraping'",
+        "Subhead: 'Get verified B2B leads from Apollo directly to your CRM. No manual work. 99% accuracy.'",
+        "CTA 1: WhatsApp Chat (Link: https://wa.me/8801743212291)",
+        "CTA 2: Request Leads (Scroll to form)"
+      ]
+    },
+    "trust": {
+      "title": "Trusted by Data-Driven Teams",
+      "layout": "Marquee of tech logos (use lucide icons or text as placeholders if images unavailable)",
+      "image": "https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "features": {
+      "layout": "Bento Grid (3 cols)",
+      "items": [
+        {"title": "99% Verified Emails", "icon": "CheckCircle", "desc": "We double-verify every email to ensure zero bounce rates."},
+        {"title": "Custom Filtering", "icon": "Filter", "desc": "Filter by industry, revenue, headcount, and tech stack."},
+        {"title": "CRM Integration", "icon": "Database", "desc": "Direct export to HubSpot, Salesforce, or CSV."},
+        {"title": "GDPR Compliant", "icon": "ShieldCheck", "desc": "Fully compliant scraping methods that respect privacy."},
+        {"title": "Fast Turnaround", "icon": "Zap", "desc": "Get your list of 10,000+ leads in under 24 hours."},
+        {"title": "Dedicated Support", "icon": "Headphones", "desc": "24/7 access to our data experts via WhatsApp."}
+      ]
+    },
+    "how_it_works": {
+      "layout": "Horizontal Step Process with connecting lines",
+      "steps": [
+        {"num": "01", "title": "Share Criteria", "desc": "Send us your Apollo search URL or lead criteria."},
+        {"num": "02", "title": "We Scrape", "desc": "Our engine extracts and verifies data points."},
+        {"num": "03", "title": "Receive Data", "desc": "Get a clean CSV/Excel file or CRM sync."}
+      ]
+    },
+    "pricing": {
+      "tiers": [
+        {"name": "Starter", "price": "$99", "leads": "2,000 Leads", "features": ["CSV Export", "Basic Support", "48h Delivery"]},
+        {"name": "Growth", "price": "$249", "leads": "10,000 Leads", "highlight": true, "features": ["CRM Sync", "Priority Support", "24h Delivery", "Phone Numbers"]},
+        {"name": "Enterprise", "price": "Custom", "leads": "Unlimited", "features": ["Dedicated Account Manager", "API Access", "Real-time Scraping"]}
+      ]
+    },
+    "lead_form": {
+      "id": "lead-request-form",
+      "fields": [
+        {"name": "name", "label": "Full Name", "type": "text"},
+        {"name": "email", "label": "Work Email", "type": "email"},
+        {"name": "company", "label": "Company Name", "type": "text"},
+        {"name": "apollo_url", "label": "Apollo Search URL (Optional)", "type": "url", "placeholder": "https://app.apollo.io/..."}
+      ],
+      "submit_text": "Request Lead Sample"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1759178461885-43915042cd11?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "team_photo": "https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "icons": "Use 'lucide-react' for all UI icons. Use 'react-icons/fa' for WhatsApp icon if needed."
+  },
+  "universal_guidelines": [
+    "Use 'Outfit' font for all headings (Import from Google Fonts).",
+    "Use 'Inter' font for body text.",
+    "Do NOT use pure black (#000000). Use Slate-950 (#020617) as the darkest shade.",
+    "Ensure the WhatsApp button is always visible or prominent.",
+    "The Form MUST submit to the backend API which stores in MongoDB.",
+    "Add a 'floating' effect to the feature cards using hover:translate-y.",
+    "Use a 'glow' effect behind the Hero image or main CTA."
+  ],
+  "instructions_to_main_agent": [
+    "1. Install dependencies: `npm install lucide-react framer-motion clsx tailwind-merge` (or yarn add).",
+    "2. Setup Tailwind to use the 'Outfit' and 'Inter' fonts.",
+    "3. Create a layout component that wraps the page with a dark background.",
+    "4. Implement the components using the design styles defined above.",
+    "5. Ensure the Contact Form captures data and sends it to the backend endpoint.",
+    "6. Add the WhatsApp floating button fixed at bottom-right.",
+    "7. Use the provided image URLs for background and trust sections."
+  ]
+}

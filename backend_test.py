@@ -51,7 +51,7 @@ class ApolloScrapingAPITester:
             payload = {
                 "name": "John Doe",
                 "email": "john@example.com",
-                "company": "Test Company",
+                "phone": "+1234567890",
                 "apollo_url": "https://apollo.io/test-filter"
             }
             
@@ -216,8 +216,8 @@ class ApolloScrapingAPITester:
                 details += f", Lead ID: {data['id']}"
                 
                 # Verify optional fields are handled correctly
-                if data.get('company') is not None:
-                    details += f", Company: {data['company']}"
+                if data.get('phone') is not None:
+                    details += f", Phone: {data['phone']}"
                 if data.get('apollo_url') is not None:
                     details += f", Apollo URL: {data['apollo_url']}"
             else:

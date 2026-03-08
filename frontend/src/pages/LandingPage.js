@@ -31,7 +31,7 @@ const LandingPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    phone: "",
     apollo_url: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,7 +43,7 @@ const LandingPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) {
+    if (!formData.name || !formData.email || !formData.phone) {
       toast.error("Please fill in required fields");
       return;
     }
@@ -52,7 +52,7 @@ const LandingPage = () => {
     try {
       await axios.post(`${API}/leads`, formData);
       toast.success("Request submitted successfully! We'll contact you soon.");
-      setFormData({ name: "", email: "", company: "", apollo_url: "" });
+      setFormData({ name: "", email: "", phone: "", apollo_url: "" });
     } catch (error) {
       toast.error("Failed to submit request. Please try again.");
       console.error(error);
@@ -66,12 +66,12 @@ const LandingPage = () => {
   };
 
   const features = [
-    { icon: CheckCircle, title: "99% Verified Emails", desc: "We double-verify every email to ensure zero bounce rates." },
-    { icon: Filter, title: "Custom Filtering", desc: "Filter by industry, revenue, headcount, and tech stack." },
-    { icon: Database, title: "CRM Integration", desc: "Direct export to HubSpot, Salesforce, or CSV." },
-    { icon: ShieldCheck, title: "GDPR Compliant", desc: "Fully compliant scraping methods that respect privacy." },
-    { icon: Zap, title: "Fast Turnaround", desc: "Get your list of 10,000+ leads in under 24 hours." },
-    { icon: Headphones, title: "Dedicated Support", desc: "24/7 access to our data experts via WhatsApp." },
+    { icon: CheckCircle, title: "Direct Apollo Data", desc: "Leads scraped directly from Apollo.io, exactly as it appears." },
+    { icon: Filter, title: "Custom Filtering", desc: "Filter by industry, location, company size, job title, and more." },
+    { icon: Database, title: "Excel / CSV Export", desc: "Clean & organized data delivered in Excel or CSV format." },
+    { icon: ShieldCheck, title: "Accurate & Relevant", desc: "We only deliver Apollo.io sourced data for reliable results." },
+    { icon: Zap, title: "Fast Delivery", desc: "Quick turnaround from 24 hours to 10 days based on volume." },
+    { icon: Headphones, title: "Reliable Support", desc: "24/7 access to our data experts via WhatsApp." },
   ];
 
   const steps = [
@@ -83,23 +83,26 @@ const LandingPage = () => {
   const pricing = [
     {
       name: "Starter",
-      price: "$99",
-      leads: "2,000 Leads",
-      features: ["CSV Export", "Basic Support", "48h Delivery", "Email Verification"],
+      price: "$15",
+      leads: "10,000 Leads",
+      delivery: "24 Hours",
+      features: ["CSV/Excel Export", "Direct Apollo Data", "Custom Filters", "WhatsApp Support"],
       popular: false,
     },
     {
       name: "Growth",
-      price: "$249",
-      leads: "10,000 Leads",
-      features: ["CRM Sync", "Priority Support", "24h Delivery", "Phone Numbers", "Company Data"],
+      price: "$75",
+      leads: "50,000 Leads",
+      delivery: "48 Hours",
+      features: ["CSV/Excel Export", "Direct Apollo Data", "Custom Filters", "Priority Support", "Bulk Discount"],
       popular: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      leads: "Unlimited",
-      features: ["Dedicated Manager", "API Access", "Real-time Scraping", "Custom Filters", "SLA Guarantee"],
+      name: "Gold",
+      price: "$750",
+      leads: "1 Million Leads",
+      delivery: "10 Days",
+      features: ["CSV/Excel Export", "Direct Apollo Data", "Custom Filters", "Dedicated Support", "Volume Pricing"],
       popular: false,
     },
   ];
@@ -180,10 +183,20 @@ const LandingPage = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ fontFamily: 'Outfit, sans-serif' }}>
             Professional Apollo Lead Scraping
           </h2>
-          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Our Unlimited Apollo Scraping Service allows businesses, marketers, agencies, and sales teams 
-            to extract targeted B2B leads directly from Apollo.io using custom filters. Simply send your 
-            Apollo filter URL and receive clean, organized, and ready-to-use lead data.
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+            Get highly targeted B2B leads directly from Apollo.io using your custom filters. Simply provide your Apollo filter URL, and we will extract the exact data based on your selected criteria such as industry, location, company size, job title, and more.
+          </p>
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+            We only deliver Apollo.io sourced data, exactly as it appears on Apollo — ensuring accurate and relevant lead information.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-[#25D366]">
+            <span className="flex items-center gap-2"><Check className="w-5 h-5" /> Leads scraped directly from Apollo.io</span>
+            <span className="flex items-center gap-2"><Check className="w-5 h-5" /> Data based on your Apollo filter URL</span>
+            <span className="flex items-center gap-2"><Check className="w-5 h-5" /> Clean & organized Excel / CSV file</span>
+            <span className="flex items-center gap-2"><Check className="w-5 h-5" /> Fast delivery & reliable service</span>
+          </div>
+          <p className="text-slate-500 text-base mt-8 max-w-2xl mx-auto">
+            Perfect for B2B lead generation, sales prospecting, and marketing outreach.
           </p>
         </div>
       </section>
@@ -287,6 +300,7 @@ const LandingPage = () => {
                     {plan.price}
                   </div>
                   <CardDescription className="text-slate-400 text-lg">{plan.leads}</CardDescription>
+                  <CardDescription className="text-[#25D366] text-sm mt-1">Delivery: {plan.delivery}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <ul className="space-y-4 mb-8">
@@ -345,7 +359,7 @@ const LandingPage = () => {
                       data-testid="form-email"
                       name="email"
                       type="email"
-                      placeholder="Work Email *"
+                      placeholder="Email Address *"
                       value={formData.email}
                       onChange={handleInputChange}
                       className="bg-slate-950/50 border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366]"
@@ -354,19 +368,21 @@ const LandingPage = () => {
                   </div>
                   <div>
                     <Input
-                      data-testid="form-company"
-                      name="company"
-                      placeholder="Company Name (Optional)"
-                      value={formData.company}
+                      data-testid="form-phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone Number *"
+                      value={formData.phone}
                       onChange={handleInputChange}
                       className="bg-slate-950/50 border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366]"
+                      required
                     />
                   </div>
                   <div>
                     <Input
                       data-testid="form-apollo-url"
                       name="apollo_url"
-                      placeholder="Apollo Filter URL (Optional)"
+                      placeholder="Apollo Filter URL"
                       value={formData.apollo_url}
                       onChange={handleInputChange}
                       className="bg-slate-950/50 border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366]"

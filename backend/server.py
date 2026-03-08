@@ -44,7 +44,7 @@ class LeadRequest(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
     email: EmailStr
-    company: Optional[str] = None
+    phone: Optional[str] = None
     apollo_url: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     status: str = "pending"
@@ -52,7 +52,7 @@ class LeadRequest(BaseModel):
 class LeadRequestCreate(BaseModel):
     name: str
     email: EmailStr
-    company: Optional[str] = None
+    phone: Optional[str] = None
     apollo_url: Optional[str] = None
 
 

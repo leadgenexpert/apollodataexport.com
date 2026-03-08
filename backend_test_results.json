@@ -14,7 +14,7 @@
       "test": "Create Lead (Valid Data)",
       "status": "\u2705 PASS",
       "success": true,
-      "details": "Status: 200, Lead ID: bbc3e40b-6665-49c5-8066-cf5ad4d2e81b"
+      "details": "Status: 200, Lead ID: cbf532f5-2b5c-4064-99cd-6aeb46919d69"
     },
     {
       "test": "Create Lead (Missing Name)",
@@ -32,13 +32,13 @@
       "test": "Create Lead (Minimal Data)",
       "status": "\u2705 PASS",
       "success": true,
-      "details": "Status: 200, Lead ID: 1ce82d39-8d76-40a4-a5c2-a7b57a4f5350"
+      "details": "Status: 200, Lead ID: 93457193-f287-4280-a3f9-b103ad46f3c1"
     },
     {
       "test": "Get All Leads",
       "status": "\u2705 PASS",
       "success": true,
-      "details": "Status: 200, Total leads: 2"
+      "details": "Status: 200, Total leads: 6"
     },
     {
       "test": "CORS Headers Check",

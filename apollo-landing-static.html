@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Scraping Service - B2B Lead Generation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwindcss.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        outfit: ['Outfit', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+        
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.3); } 50% { box-shadow: 0 0 40px rgba(37, 211, 102, 0.6); } }
+        @keyframes fade-in-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+        
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .gradient-text { background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(37, 211, 102, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(37, 211, 102, 0.05) 0%, transparent 50%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent); transform: rotate(45deg); transition: 0.5s; }
+        .btn-shine:hover::after { left: 100%; }
+        
+        .container-custom { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 100px 20px; }
+        @media (max-width: 768px) { .section-padding { padding: 60px 16px; } }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center hero-pattern">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#020617] via-transparent to-[#020617] pointer-events-none"></div>
+        
+        <div class="container-custom relative z-10 py-20 md:py-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block mb-6 bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30 px-4 py-2 text-sm rounded-full animate-fade-in-up">
+                    Enterprise-Grade B2B Lead Generation
+                </span>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-8 animate-fade-in-up font-outfit">
+                    Unlimited Apollo Scraping
+                    <span class="block gradient-text">For High-Quality B2B Leads</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in-up">
+                    Get verified real-time Apollo.io leads for sales outreach, marketing campaigns, and explosive business growth. 99% accuracy guaranteed.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+                    <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20your%20Apollo%20Scraping%20Service.%20I'd%20like%20to%20know%20more%20about%20getting%20B2B%20leads%20from%20Apollo.io." 
+                       target="_blank"
+                       class="bg-[#25D366] hover:bg-[#1faa52] text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:shadow-[0_0_50px_rgba(37,211,102,0.6)] btn-shine inline-flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Chat on WhatsApp
+                    </a>
+                    <a href="#lead-form" 
+                       class="bg-white/5 hover:bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full text-lg backdrop-blur-md transition-all inline-flex items-center justify-center">
+                        Request Leads
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-[#25D366]/10 rounded-full blur-3xl animate-float"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-[#25D366]/5 rounded-full blur-3xl animate-float" style="animation-delay: 1s;"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 border-y border-slate-800/50">
+        <div class="container-custom">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center animate-fade-in-up">
+                    <svg class="w-8 h-8 text-[#25D366] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 font-outfit">500+</div>
+                    <div class="text-slate-500 text-sm">Happy Clients</div>
+                </div>
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <svg class="w-8 h-8 text-[#25D366] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 font-outfit">10M+</div>
+                    <div class="text-slate-500 text-sm">Leads Delivered</div>
+                </div>
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <svg class="w-8 h-8 text-[#25D366] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 font-outfit">50+</div>
+                    <div class="text-slate-500 text-sm">Countries</div>
+                </div>
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <svg class="w-8 h-8 text-[#25D366] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    <div class="text-3xl md:text-4xl font-bold mb-1 font-outfit">4.9</div>
+                    <div class="text-slate-500 text-sm">Client Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section-padding">
+        <div class="container-custom text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 font-outfit">Professional Apollo Lead Scraping</h2>
+            <p class="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                Get highly targeted B2B leads directly from Apollo.io using your custom filters. Simply provide your Apollo filter URL, and we will extract the exact data based on your selected criteria such as industry, location, company size, job title, and more.
+            </p>
+            <p class="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+                We only deliver Apollo.io sourced data, exactly as it appears on Apollo — ensuring accurate and relevant lead information.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-[#25D366]">
+                <span class="flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Leads scraped directly from Apollo.io</span>
+                <span class="flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Data based on your Apollo filter URL</span>
+                <span class="flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Clean & organized Excel / CSV file</span>
+                <span class="flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fast delivery & reliable service</span>
+            </div>
+            <p class="text-slate-500 text-base mt-8 max-w-2xl mx-auto">Perfect for B2B lead generation, sales prospecting, and marketing outreach.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-padding bg-slate-900/30">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-outfit">Why Our Service Is <span class="gradient-text">Powerful</span></h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Everything you need to supercharge your B2B lead generation</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Direct Apollo Data</h3>
+                    <p class="text-slate-400">Leads scraped directly from Apollo.io, exactly as it appears.</p>
+                </div>
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Custom Filtering</h3>
+                    <p class="text-slate-400">Filter by industry, location, company size, job title, and more.</p>
+                </div>
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Excel / CSV Export</h3>
+                    <p class="text-slate-400">Clean & organized data delivered in Excel or CSV format.</p>
+                </div>
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Accurate & Relevant</h3>
+                    <p class="text-slate-400">We only deliver Apollo.io sourced data for reliable results.</p>
+                </div>
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Fast Delivery</h3>
+                    <p class="text-slate-400">Quick turnaround from 24 hours to 10 days based on volume.</p>
+                </div>
+                <div class="glass card-hover rounded-2xl p-6 border-slate-800 hover:border-[#25D366]/50 bg-slate-900/50 animate-fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-[#25D366]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2 font-outfit">Reliable Support</h3>
+                    <p class="text-slate-400">24/7 access to our data experts via WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-outfit">How It <span class="gradient-text">Works</span></h2>
+                <p class="text-slate-400 text-lg">Simple 3-step process to get your leads</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#25D366] via-[#25D366]/50 to-[#25D366] -translate-y-1/2"></div>
+                
+                <div class="text-center relative z-10 animate-fade-in-up">
+                    <div class="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-[0_0_40px_rgba(37,211,102,0.5)] font-outfit">01</div>
+                    <h3 class="text-2xl font-semibold mb-3 font-outfit">Share Criteria</h3>
+                    <p class="text-slate-400 max-w-xs mx-auto">Send us your Apollo search URL or lead criteria via WhatsApp or form.</p>
+                </div>
+                <div class="text-center relative z-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-[0_0_40px_rgba(37,211,102,0.5)] font-outfit">02</div>
+                    <h3 class="text-2xl font-semibold mb-3 font-outfit">We Scrape</h3>
+                    <p class="text-slate-400 max-w-xs mx-auto">Our engine extracts and verifies data points in real-time.</p>
+                </div>
+                <div class="text-center relative z-10 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 rounded-full bg-[#25D366] text-white flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-[0_0_40px_rgba(37,211,102,0.5)] font-outfit">03</div>
+                    <h3 class="text-2xl font-semibold mb-3 font-outfit">Receive Data</h3>
+                    <p class="text-slate-400 max-w-xs mx-auto">Get a clean CSV/Excel file or direct CRM sync ready for outreach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section-padding bg-slate-900/30">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-outfit">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                <p class="text-slate-400 text-lg">Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter -->
+                <div class="glass rounded-2xl border border-slate-800 hover:border-slate-600 transition-all duration-300 p-6">
+                    <div class="text-center pb-4">
+                        <h3 class="text-2xl text-white mb-2 font-outfit font-semibold">Starter</h3>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 font-outfit">$15</div>
+                        <p class="text-slate-400 text-lg">10,000 Leads</p>
+                        <p class="text-[#25D366] text-sm mt-1">Delivery: 24 Hours</p>
+                    </div>
+                    <div class="pt-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CSV/Excel Export</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Direct Apollo Data</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Filters</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> WhatsApp Support</li>
+                        </ul>
+                        <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20the%20*Starter%20Package*%20for%20Apollo%20Scraping.%0A%0A📦%20Package:%20Starter%0A💰%20Price:%20$15%0A📊%20Leads:%2010,000%20Leads%0A⏱%20Delivery:%2024%20Hours%0A%0APlease%20share%20more%20details%20about%20how%20to%20proceed!" 
+                           target="_blank"
+                           class="w-full py-4 rounded-full font-semibold transition-all bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Growth (Popular) -->
+                <div class="relative glass rounded-2xl border-2 border-[#25D366] scale-105 shadow-[0_0_50px_rgba(37,211,102,0.3)] p-6">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="bg-[#25D366] text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                    </div>
+                    <div class="text-center pb-4 pt-2">
+                        <h3 class="text-2xl text-white mb-2 font-outfit font-semibold">Growth</h3>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 font-outfit">$75</div>
+                        <p class="text-slate-400 text-lg">50,000 Leads</p>
+                        <p class="text-[#25D366] text-sm mt-1">Delivery: 48 Hours</p>
+                    </div>
+                    <div class="pt-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CSV/Excel Export</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Direct Apollo Data</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Filters</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Priority Support</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Bulk Discount</li>
+                        </ul>
+                        <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20the%20*Growth%20Package*%20for%20Apollo%20Scraping.%0A%0A📦%20Package:%20Growth%0A💰%20Price:%20$75%0A📊%20Leads:%2050,000%20Leads%0A⏱%20Delivery:%2048%20Hours%0A%0APlease%20share%20more%20details%20about%20how%20to%20proceed!" 
+                           target="_blank"
+                           class="w-full py-4 rounded-full font-semibold transition-all bg-[#25D366] hover:bg-[#1faa52] text-white shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Gold -->
+                <div class="glass rounded-2xl border border-slate-800 hover:border-slate-600 transition-all duration-300 p-6">
+                    <div class="text-center pb-4">
+                        <h3 class="text-2xl text-white mb-2 font-outfit font-semibold">Gold</h3>
+                        <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 font-outfit">$750</div>
+                        <p class="text-slate-400 text-lg">1 Million Leads</p>
+                        <p class="text-[#25D366] text-sm mt-1">Delivery: 10 Days</p>
+                    </div>
+                    <div class="pt-6">
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CSV/Excel Export</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Direct Apollo Data</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Custom Filters</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated Support</li>
+                            <li class="flex items-center gap-3 text-slate-300"><svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Volume Pricing</li>
+                        </ul>
+                        <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20the%20*Gold%20Package*%20for%20Apollo%20Scraping.%0A%0A📦%20Package:%20Gold%0A💰%20Price:%20$750%0A📊%20Leads:%201%20Million%20Leads%0A⏱%20Delivery:%2010%20Days%0A%0APlease%20share%20more%20details%20about%20how%20to%20proceed!" 
+                           target="_blank"
+                           class="w-full py-4 rounded-full font-semibold transition-all bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form Section -->
+    <section id="lead-form" class="section-padding">
+        <div class="container-custom">
+            <div class="max-w-xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 font-outfit">Request Apollo <span class="gradient-text">Scraping</span></h2>
+                    <p class="text-slate-400 text-lg">Fill the form and we'll get back to you within 24 hours</p>
+                </div>
+                
+                <div class="glass rounded-2xl border border-slate-800 p-8">
+                    <form action="https://formsubmit.co/your-email@example.com" method="POST" class="space-y-5">
+                        <input type="hidden" name="_subject" value="New Apollo Scraping Request">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div>
+                            <input type="text" name="name" placeholder="Full Name *" required
+                                   class="w-full bg-slate-950/50 border border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl px-4 focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] focus:outline-none transition-all">
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email Address *" required
+                                   class="w-full bg-slate-950/50 border border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl px-4 focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] focus:outline-none transition-all">
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Phone Number *" required
+                                   class="w-full bg-slate-950/50 border border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl px-4 focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] focus:outline-none transition-all">
+                        </div>
+                        <div>
+                            <input type="url" name="apollo_url" placeholder="Apollo Filter URL"
+                                   class="w-full bg-slate-950/50 border border-slate-700 text-white placeholder:text-slate-500 h-14 rounded-xl px-4 focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] focus:outline-none transition-all">
+                        </div>
+                        <button type="submit"
+                                class="w-full bg-[#25D366] hover:bg-[#1faa52] text-white font-semibold py-4 rounded-xl text-lg transition-all shadow-[0_0_30px_rgba(37,211,102,0.4)] hover:shadow-[0_0_50px_rgba(37,211,102,0.6)] btn-shine flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section-padding bg-gradient-to-b from-slate-900/50 to-[#020617]">
+        <div class="container-custom text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 font-outfit">Get Unlimited Apollo Leads <span class="gradient-text">Today</span></h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Click below and send your Apollo filter URL to start scraping immediately. Our team is ready to help you scale your outreach.</p>
+            <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20your%20Apollo%20Scraping%20Service.%20I'd%20like%20to%20know%20more%20about%20getting%20B2B%20leads%20from%20Apollo.io." 
+               target="_blank"
+               class="inline-flex items-center bg-[#25D366] hover:bg-[#1faa52] text-white font-semibold px-10 py-4 rounded-full text-lg transition-all duration-300 shadow-[0_0_40px_rgba(37,211,102,0.5)] hover:shadow-[0_0_60px_rgba(37,211,102,0.7)] animate-pulse-glow btn-shine">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat on WhatsApp Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800/50">
+        <div class="container-custom text-center text-slate-500 text-sm">
+            <p>&copy; 2025 Apollo Scraping Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8801743212291?text=Hi!%20I'm%20interested%20in%20your%20Apollo%20Scraping%20Service." 
+       target="_blank"
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:scale-110 transition-transform duration-300 animate-pulse-glow">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+</body>
+</html>
